@@ -18,6 +18,8 @@ input {
 	padding: 5px;
 	font-size: 20px;
 	font-family: 'Lato', cursive;
+	margin: 10px;
+	display: inline-block;
 }
 
 #section-1 {
@@ -107,3 +109,7 @@ input {
   transition: 0s;
 }
 
+#submit {
+	width: 90px;
+	height: 40px;
+}
