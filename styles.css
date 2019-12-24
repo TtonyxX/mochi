@@ -160,6 +160,12 @@ label {
 	padding: 5px;
 	font-size: 20px;
 	font-family: 'Lato', cursive;
+	transition: 0.3 all;
+}
+
+.btn:hover {
+	cursor: pointer;
+	filter: grayscale(60%);
 }
 
 /* form styling */
