@@ -51,8 +51,8 @@
 
                 <br>
 
-                <label for="flavor">Toppings: </label> 
-                <select id="flavor" class="mb mt" name="flavor">
+                <label for="topping">Toppings: </label> 
+                <select id="topping" class="mb mt" name="topping">
                     <option>None</option>
                     <option>Gummy bears</option>
                     <option>Chocolate flakes</option>
@@ -78,12 +78,13 @@
                 <br>
 
 
-                <button id="submit" class="mt">Buy</button>
+                <button id="submit" class="mt btn">Buy</button>
 
                 <!-- Thank you form -->
                 <div class="thank-message" style="display:none;">
                   Thank you for buying from us!<br>
-                  You're purchase will be arrive in 15-20 minutes<br>
+                  You're purchase will be arrive in <br>
+                  <button class="btn" onclick="location.href = 'buy.html'">Order again</button>
                 </div>
 
             </form>

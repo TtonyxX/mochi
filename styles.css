@@ -21,6 +21,7 @@ input {
 	margin: 10px;
 	display: inline-block;
 	width: 300px;
+	height: 40px;
 }
 
 select {
@@ -109,6 +110,16 @@ label {
 #section-2 {
 	height: 100vh;
 	text-align: center;
+	font-family: 'Lato', cursive;
+	padding: 20px 80px 0px 80px;
+}
+
+#section-2 > h1 {
+	font-size: 50px;
+}
+
+#section-2 > p {
+	font-size: 40px;
 }
 
 .ripple {
@@ -140,7 +151,7 @@ label {
   transition: 0s;
 }
 
-#submit {
+.btn {
 	width: 90px;
 	height: 40px;
 	outline: none;
@@ -161,4 +172,8 @@ label {
 	font-family: 'Lato', cursive;
 	font-size: 20px;
 	text-align: center;
+}
+
+#flavor {
+	margin-top: 50px;
 }
