@@ -20,6 +20,37 @@ input {
 	font-family: 'Lato', cursive;
 	margin: 10px;
 	display: inline-block;
+	width: 300px;
+}
+
+select {
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 20px;
+	font-family: 'Lato', cursive;
+	display: inline-block;
+}
+
+label {
+	color: white;
+	font-size: 20px;
+	font-family: 'Lato', cursive;
+}
+
+.mt {
+	margin-top: 10px;
+}
+
+.mb {
+	margin-bottom: 10px;
+}
+
+.undertext {
+	color: gray;
+	font-family: 'Lato', cursive;
+	margin: -10px 40px 0px 0px;
 }
 
 #section-1 {
@@ -118,4 +149,16 @@ input {
 	padding: 5px;
 	font-size: 20px;
 	font-family: 'Lato', cursive;
+}
+
+/* form styling */
+
+#address {
+	margin-top: -5px;
+}
+
+.thank-message {
+	font-family: 'Lato', cursive;
+	font-size: 20px;
+	text-align: center;
 }

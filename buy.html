@@ -39,25 +39,51 @@
 
             <form class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycby7zV1cGsTRGYcy43MaKQuXX8f1wr95alQOMPI4CA/exec">
 
-                <input id="name" name="name" placeholder="Name" />
+
+               
+                <label for="flavor">Ice cream: </label> 
+                <select id="flavor" class="mb mt" name="flavor">
+                    <option>None</option>
+                    <option>Vanilla</option>
+                    <option>Chocolate</option>
+                    <option>Green tea</option>
+                </select>
 
                 <br>
 
-                <input id="email" name="email" required placeholder="Email" />
+                <label for="flavor">Toppings: </label> 
+                <select id="flavor" class="mb mt" name="flavor">
+                    <option>None</option>
+                    <option>Gummy bears</option>
+                    <option>Chocolate flakes</option>
+                </select>
 
                 <br>
 
-                <input id="address" name="address" required placeholder="Address" />
+                <input id="quantity" class="mb mt" name="quantity" placeholder="Quantity" autocomplete="off"/>
+
+                <br>
+
+                <input id="name" class="mb" name="name" placeholder="Name" autocomplete="off"/>
+
+                <br>
+
+                <input id="phonenum" name="phonenum" required placeholder="Phone number" autocomplete="off"/>
+                <div class="undertext">*used to confirm purchase</div>
+
+                <br>
+
+                <input id="address" name="address" required placeholder="Address" autocomplete="off"/>
 
                 <br>
 
 
-                <button id="submit">Buy</button>
+                <button id="submit" class="mt">Buy</button>
 
                 <!-- Thank you form -->
                 <div class="thank-message" style="display:none;">
-                  <h2><em>Thanks</em> for contacting us!
-                    We will get back to you soon!</h2>
+                  Thank you for buying from us!<br>
+                  You're purchase will be arrive in 15-20 minutes<br>
                 </div>
 
             </form>
