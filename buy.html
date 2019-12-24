@@ -61,7 +61,7 @@
 
                 <br>
 
-                <input id="quantity" class="mb mt" name="quantity" placeholder="Quantity" autocomplete="off"/>
+                <input id="quantity" class="mb mt" name="quantity" required placeholder="Quantity" autocomplete="off"/>
 
                 <br>
 
@@ -79,7 +79,7 @@
 
                 <br>
 
-                <button id="submit" class="mt btn">Buy</button>
+                <button id="submit" class="mt btn" onclick="showbtn()">Buy</button>
 
 
                 <p id="price"></p>
@@ -89,10 +89,11 @@
                   You're purchase has been completed!<br>
                   We'll be calling shortly to confirm<br>
                   If confirmed, it will be arrive in about 1 hour<br>
-                  <button class="btn" style="width: 150px; margin-top: 10px;" onclick="redirect()">Order again</button>
                 </div>
 
             </form>
+
+            <button id="redirectbtn" class="btn" style="display: none; width: 150px; margin-top: 10px;" onclick="redirect()">Order again</button>
 
         </div>
 
@@ -169,8 +170,11 @@
         }
 
         function redirect() {
-            alert("hi");
             window.location.href = "buy.html";
+        }
+
+        function showbtn() {
+            $("#redirectbtn").show();
         }
 
 
