@@ -11,6 +11,15 @@ h1 {
 	font-size: 150px;
 }
 
+input {
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 20px;
+	font-family: 'Lato', cursive;
+}
+
 #section-1 {
 	height: 100vh;
 	text-align: center;
