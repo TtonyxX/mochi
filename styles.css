@@ -51,7 +51,7 @@ label {
 .undertext {
 	color: gray;
 	font-family: 'Lato', cursive;
-	margin: -10px 40px 0px 0px;
+	margin: -10px 0px 0px 0px;
 }
 
 #section-1 {
@@ -168,7 +168,7 @@ label {
 	margin-top: -5px;
 }
 
-.thankyou-message {
+.thankyou_message {
 	font-family: 'Lato', cursive;
 	font-size: 20px;
 	text-align: center;
@@ -176,4 +176,9 @@ label {
 
 #flavor {
 	margin-top: 50px;
+}
+
+#price {
+	font-family: 'Lato', cursive;
+	font-size: 40px;
 }

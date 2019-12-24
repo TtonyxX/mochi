@@ -43,19 +43,20 @@
                
                 <label for="flavor">Ice cream: </label> 
                 <select id="flavor" class="mb mt" name="flavor">
-                    <option>None</option>
-                    <option>Vanilla</option>
-                    <option>Chocolate</option>
-                    <option>Green tea</option>
+                    <option value="None">None</option>
+                    <option value="Vanilla">Vanilla</option>
+                    <option value="Chocolate">Chocolate</option>
+                    <option value="Green tea">Green tea</option>
                 </select>
+                <div class="undertext" id="thicker">*no ice cream means thicker mochi</div>
 
                 <br>
 
                 <label for="topping">Toppings: </label> 
-                <select id="topping" class="mb mt" name="topping">
-                    <option>None</option>
-                    <option>Gummy bears</option>
-                    <option>Chocolate flakes</option>
+                <select id="topping" class="mb" name="topping">
+                    <option value="None">None</option>
+                    <option value="Gummy bears">Gummy bears</option>
+                    <option value="Chocolate flakes">Chocolate flakes</option>
                 </select>
 
                 <br>
@@ -74,24 +75,29 @@
                 <br>
 
                 <input id="address" name="address" required placeholder="Address" autocomplete="off"/>
+                <div class="undertext">*will be delivered here</div>
 
                 <br>
 
-
                 <button id="submit" class="mt btn">Buy</button>
+
+
+                <p id="price"></p>
+
+                <br>
 
                 <!-- Thank you form -->
                 <div class="thankyou_message" style="display:none;">
                   Thank you for buying from us!<br>
-                  You're purchase will be arrive in <br>
-                  <button class="btn" onclick="location.href = 'buy.html'">Order again</button>
+                  You're purchase will be arrive in about 1 hour<br>
+                  <button class="btn" style="width: 200px" onclick="location.href = 'buy.html'">Order again</button>
                 </div>
 
             </form>
 
         </div>
 
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
 
         <script>
@@ -110,11 +116,65 @@
             node.addEventListener('animationend', handleAnimationEnd)
         }
 
-        var redirect = function(){
-           document.location.href="index.html"
+        var quantity;
+        var price;
+        var flavor = "None";
+        var topping = "None";
+
+        $('#quantity').on('input', function(e){
+            var num = parseInt($('#quantity').val());
+            quantity = num;
+            updatePrice();
+        });
+
+        $('#flavor').on('input', function(e){
+            var e = document.getElementById("flavor");
+            flavor = e.options[e.selectedIndex].value;
+            updatePrice();
+            if(flavor != "None") {
+                $("#thicker").css("display", "none");
+            } else {
+                $("#thicker").css("display", "block");
+            }
+        });
+
+        $('#topping').on('input', function(e){
+            var e = document.getElementById("topping");
+            topping = e.options[e.selectedIndex].value;
+            updatePrice();
+        });
+
+        function updatePrice() {
+
+            if(flavor == "None") {
+                price = quantity * 0.50;
+            } else {
+                price = quantity * 0.40 + quantity * 0.80;
+                if(topping != "None") {
+                    price += quantity * 0.30;
+                }
+            }
+
+            var newNum = Math.floor(price*100)/100;
+            var numString = "";
+            if(newNum%1 == 0) {
+                numString += newNum + ".00";
+            } else if(newNum % 0.1 < 0.1) {
+                numString += newNum + "0";
+            } else {
+                numString = newNum;
+            }
+            if(!isNaN(price)) $("#price").html("Price: " + numString + "$");
+            else $("#price").html("");
+
         }
 
-        //AIzaSyANi0i8Sr6ucY2qbul_4wwCp0X22M4lUK8
+
+        // With ice cream
+        // mochi 0.4$/square ice cream 0.8$/square topppings 0.3$/square
+
+        // Just mochi
+        // mochi 0.5$/square
 
         </script>
 
