@@ -52,7 +52,7 @@
                 <br>
 
 
-                <input type="submit" value="Buy" id="submit">
+                <input type="submit" value="Buy" id="submit" onclick="redirect()">
 
             </form>
 
@@ -76,6 +76,10 @@
             }
 
             node.addEventListener('animationend', handleAnimationEnd)
+        }
+
+        var redirect = function(){
+           document.location.href="index.html"
         }
 
         //AIzaSyANi0i8Sr6ucY2qbul_4wwCp0X22M4lUK8
