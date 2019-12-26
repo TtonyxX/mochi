@@ -192,6 +192,22 @@ label {
 	font-size: 40px;
 }
 
+#auth-container {
+	width: 400px;
+	font-family: 'Lato', cursive;
+	display: inline-block;
+	text-align: center;
+}
+
+#auth {
+	height: 25px;
+	display: inline-block;
+}
+
+#auth-label {
+	display: inline-block;
+}
+
 @media only screen and (max-width: 600px) {
     #section-2 {
     	padding: 20px 20px 0px 20px;

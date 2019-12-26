@@ -79,6 +79,13 @@
 
                 <br>
 
+                <div id="auth-container">
+                    <div for="auth" id="auth-label">This purchase is authentic and I will<br>pay the price shown when requested: </div> 
+                    <input id="auth" name="auth" required placeholder="Address" type="checkbox" autocomplete="off"/>
+                </div>
+
+                <br>
+
                 <button id="submit" class="mt btn" onclick="showbtn()">Buy</button>
 
 
@@ -164,8 +171,11 @@
             } else {
                 numString = newNum;
             }
-            if(!isNaN(price)) $("#price").html("Price: " + numString + "$");
-            else $("#price").html("");
+            if(!isNaN(price)) {
+                $("#price").html("Price: " + numString + "$");
+            } else {
+                $("#quantity").val("");
+            }
 
         }
 
