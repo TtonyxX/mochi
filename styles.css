@@ -115,11 +115,11 @@ label {
 }
 
 #section-2 > h1 {
-	font-size: 50px;
+	font-size: 45px;
 }
 
 #section-2 > p {
-	font-size: 40px;
+	font-size: 35px;
 }
 
 .ripple {
@@ -160,12 +160,14 @@ label {
 	padding: 5px;
 	font-size: 20px;
 	font-family: 'Lato', cursive;
-	transition: 0.3 all;
+	transition: 0.3s all;
+	background-color: rgb(232, 232, 232);
 }
 
 .btn:hover {
 	cursor: pointer;
-	filter: grayscale(60%);
+	filter: grayscale(20%);
+	transform: scale(1.05);
 }
 
 /* form styling */
@@ -178,6 +180,7 @@ label {
 	font-family: 'Lato', cursive;
 	font-size: 20px;
 	text-align: center;
+	color: rgb(99, 196, 73);
 }
 
 #flavor {
@@ -187,4 +190,23 @@ label {
 #price {
 	font-family: 'Lato', cursive;
 	font-size: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+    #section-2 {
+    	padding: 20px 20px 0px 20px;
+    }
+
+    #mochi-header {
+		font-size: 30px;
+	}
+
+	#squares-header {
+		font-size: 60px;
+		margin-top: -20px;
+	}
+
+	#buy-btn {
+		font-size: 20px;
+	}
 }
