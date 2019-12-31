@@ -39,33 +39,37 @@
 
             <form class="gform" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycby7zV1cGsTRGYcy43MaKQuXX8f1wr95alQOMPI4CA/exec">
 
+                <label for="flavor-mochi">Flavor: </label> 
+                <select id="flavor-mochi" class="mb mt" name="flavor-mochi">
+                    <option value="Coconut">Coconut (Original)</option>
+                    <option value="Coffee">Coffee</option>
+                    <option value="Green tea">Green tea</option>
+                    <option value="Mango">Mango</option>
+                </select>
 
+                <br>
                
                 <label for="flavor">Ice cream: </label> 
-                <select id="flavor" class="mb mt" name="flavor">
+                <select id="flavor" class="mb mt" name="flavor" disabled>
                     <option value="None">None</option>
                     <option value="Vanilla">Vanilla</option>
                     <option value="Chocolate">Chocolate</option>
-                    <option value="Green tea">Green tea</option>
-                </select>
-                <div class="undertext" id="thicker">*no ice cream means thicker mochi</div>
-
-                <br>
-
-                <label for="topping">Toppings: </label> 
-                <select id="topping" class="mb" name="topping">
-                    <option value="None">None</option>
-                    <option value="Gummy bears">Gummy bears</option>
-                    <option value="Chocolate flakes">Chocolate flakes</option>
+                    <option value="Strawberry">Strawberry</option>
                 </select>
 
                 <br>
 
-                <input id="quantity" class="mb mt" name="quantity" required placeholder="Quantity" autocomplete="off"/>
+                <!--div class="undertext" id="thicker">*no ice cream means thicker mochi</div>-->
+                <div class="undertext" id="thicker">*coming soon</div>
 
                 <br>
 
-                <input id="name" class="mb" name="name" placeholder="Name" autocomplete="off"/>
+                <input id="quantity" name="quantity" required placeholder="Quantity" autocomplete="off"/>
+                <div class="undertext">*minimum of 4</div>
+
+                <br>
+
+                <input id="name" name="name" placeholder="Name" autocomplete="off"/>
 
                 <br>
 
@@ -75,7 +79,7 @@
                 <br>
 
                 <input id="address" name="address" required placeholder="Address" autocomplete="off"/>
-                <div class="undertext">*will be delivered here</div>
+                <div class="undertext">*free delivery here until January 6th</div>
 
                 <br>
 
@@ -95,7 +99,7 @@
                 <div class="thankyou_message" style="display:none;">
                   You're purchase has been completed!<br>
                   We'll be calling shortly to confirm<br>
-                  If confirmed, it will be arrive in about 1 hour<br>
+                  If confirmed, it will be arrive within a day<br>
                 </div>
 
             </form>
@@ -128,6 +132,18 @@
         var flavor = "None";
         var topping = "None";
 
+        if(localStorage['name'] != null) {
+            $("#name").val(localStorage['name']);
+        }
+
+        if(localStorage['address'] != null) {
+            $("#address").val(localStorage['address']);
+        }
+
+        if(localStorage['phonenum'] != null) {
+            $("#phonenum").val(localStorage['phonenum']);
+        }
+
         $('#quantity').on('input', function(e){
             var num = parseInt($('#quantity').val());
             quantity = num;
@@ -154,7 +170,7 @@
         function updatePrice() {
 
             if(flavor == "None") {
-                price = quantity * 0.50;
+                price = quantity * 0.75;
             } else {
                 price = quantity * 0.40 + quantity * 0.80;
                 if(topping != "None") {
@@ -163,16 +179,25 @@
             }
 
             var newNum = Math.floor(price*100)/100;
-            var numString = "";
-            if(newNum%1 == 0) {
-                numString += newNum + ".00";
-            } else if(newNum % 0.1 < 0.1) {
-                numString += newNum + "0";
-            } else {
-                numString = newNum;
+            var numString = newNum + "";
+            var strings = numString.split(".");
+
+            console.log(strings);
+
+            if(strings.length == 1) {
+                numString += ".00";
+            } else if(strings[1].length == 1) {
+                numString += "0";
             }
+            
             if(!isNaN(price)) {
-                $("#price").html("Price: " + numString + "$");
+                if(quantity < 4) {
+                    $("#price").html("Enter a quantity of at least 4");
+                    $("#price").css("color", "red");
+                } else {
+                    $("#price").html("Price: " + numString + "$");
+                    $("#price").css("color", "white");
+                }
             } else {
                 $("#quantity").val("");
             }
@@ -184,6 +209,9 @@
         }
 
         function showbtn() {
+            localStorage['name'] = $("#name").val();
+            localStorage['address'] = $("#address").val();
+            localStorage['phonenum'] = $("#phonenum").val();
             $("#redirectbtn").show();
         }
 

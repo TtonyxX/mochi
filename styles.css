@@ -34,6 +34,10 @@ select {
 	display: inline-block;
 }
 
+select:disabled {
+	background-color: gray;
+}
+
 label {
 	color: white;
 	font-size: 20px;
@@ -57,6 +61,14 @@ label {
 #section-1 {
 	height: 100vh;
 	text-align: center;
+}
+
+#section-1 > img {
+	display: inline-block;
+	width: 14vw;
+	min-width: 200px;
+	margin-top: 20px;
+	min-height: 200px;
 }
 
 #mochi-header {
@@ -111,15 +123,17 @@ label {
 	height: 100vh;
 	text-align: center;
 	font-family: 'Lato', cursive;
-	padding: 20px 80px 0px 80px;
+	padding: 20px 15vw 0px 15vw;
 }
 
 #section-2 > h1 {
 	font-size: 45px;
+	margin-bottom: 10px;
 }
 
 #section-2 > p {
 	font-size: 35px;
+	margin: 0px;
 }
 
 .ripple {
@@ -176,6 +190,11 @@ label {
 	margin-top: -5px;
 }
 
+#name {
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
 .thankyou_message {
 	font-family: 'Lato', cursive;
 	font-size: 20px;
@@ -183,7 +202,7 @@ label {
 	color: rgb(99, 196, 73);
 }
 
-#flavor {
+#flavor-mochi {
 	margin-top: 10vh;
 }
 
@@ -208,6 +227,10 @@ label {
 	display: inline-block;
 }
 
+#sample-text {
+	font-size: 10px;
+}
+
 @media only screen and (max-width: 600px) {
     #section-2 {
     	padding: 20px 20px 0px 20px;
@@ -225,4 +248,11 @@ label {
 	#buy-btn {
 		font-size: 20px;
 	}
+
+	#section-1 > img {
+		display: inline-block;
+		height: 50px;
+		margin-top: 20px;
+	}
+
 }
