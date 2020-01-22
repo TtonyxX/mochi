@@ -220,6 +220,7 @@ label {
 
 #auth {
 	height: 25px;
+	width: 25px;
 	display: inline-block;
 }
 
@@ -251,7 +252,10 @@ label {
 
 	#section-1 > img {
 		display: inline-block;
-		height: 50px;
+		width: 20vw;
+		min-width: 50px;
+		height: 20vw;
+		min-height: 50px;
 		margin-top: 20px;
 	}
 

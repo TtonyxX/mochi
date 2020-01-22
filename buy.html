@@ -99,7 +99,7 @@
                 <div class="thankyou_message" style="display:none;">
                   You're purchase has been completed!<br>
                   We'll be calling shortly to confirm<br>
-                  If confirmed, it will be arrive within a day<br>
+                  If confirmed, it will be arrive before the end of this Sunday <strong>(<span id="date"></span>)</strong><br>
                 </div>
 
             </form>
@@ -182,8 +182,6 @@
             var numString = newNum + "";
             var strings = numString.split(".");
 
-            console.log(strings);
-
             if(strings.length == 1) {
                 numString += ".00";
             } else if(strings[1].length == 1) {
@@ -215,6 +213,20 @@
             $("#redirectbtn").show();
         }
 
+        function endOfWeek(date) {
+             
+            var lastday = date.getDate() - (date.getDay() - 1) + 6;
+            return new Date(date.setDate(lastday));
+         
+        }
+
+        dt = new Date(); 
+        var lastDay = endOfWeek(dt);
+
+        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var date = monthNames[lastDay.getMonth()] + " " + lastDay.getDate();
+
+        $("#date").html(date);
 
         // With ice cream
         // mochi 0.4$/square ice cream 0.8$/square topppings 0.3$/square
