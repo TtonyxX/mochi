@@ -42,13 +42,13 @@
                 <label for="flavor-mochi">Flavor: </label> 
                 <select id="flavor-mochi" class="mb mt" name="flavor-mochi">
                     <option value="Coconut">Coconut (Original)</option>
-                    <option value="Coffee">Coffee</option>
-                    <option value="Green tea">Green tea</option>
-                    <option value="Mango">Mango</option>
+                    <option value="Coffee" disabled>Coffee</option>
+                    <option value="Green tea" disabled>Green tea</option>
+                    <option value="Mango" disabled>Mango</option>
                 </select>
 
                 <br>
-               
+               <!--
                 <label for="flavor">Ice cream: </label> 
                 <select id="flavor" class="mb mt" name="flavor" disabled>
                     <option value="None">None</option>
@@ -59,8 +59,7 @@
 
                 <br>
 
-                <!--div class="undertext" id="thicker">*no ice cream means thicker mochi</div>-->
-                <div class="undertext" id="thicker">*coming soon</div>
+                <div class="undertext" id="thicker">*coming soon</div>-->
 
                 <br>
 
@@ -79,9 +78,8 @@
                 <br>
 
                 <input id="address" name="address" required placeholder="Address" autocomplete="off"/>
-                <div class="undertext">*free delivery here until January 6th</div>
 
-                <br>
+                <br><br>
 
                 <div id="auth-container">
                     <div for="auth" id="auth-label">This purchase is authentic and I will<br>pay the price shown when requested: </div> 

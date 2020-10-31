@@ -119,19 +119,19 @@ label {
   transform: scale(1.1);
 }
 
-#section-2 {
+#about {
 	height: 100vh;
 	text-align: center;
 	font-family: 'Lato', cursive;
 	padding: 20px 15vw 0px 15vw;
 }
 
-#section-2 > h1 {
+#about > h1 {
 	font-size: 45px;
 	margin-bottom: 10px;
 }
 
-#section-2 > p {
+#about > p {
 	font-size: 35px;
 	margin: 0px;
 }
@@ -233,7 +233,7 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
-    #section-2 {
+    #about {
     	padding: 20px 20px 0px 20px;
     }
 
